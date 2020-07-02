@@ -13,7 +13,6 @@ app.engine('.html', exphbs({
 
 app.set('view engine', '.html');
 
-app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
 // routing
 
 app.get('/', (req, res) => {
