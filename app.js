@@ -1,6 +1,5 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
-const sass = require('node-sass');
 
 const app = express();
 const port = 8080;
