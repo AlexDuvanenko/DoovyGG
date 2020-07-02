@@ -1,24 +1,27 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
+const sass = require('node-sass');
 
 const app = express();
 const port = 8080;
-const domain = 'doovy.gg';
+
 
 app.engine('.html', exphbs({
     defaultLayout: 'main',
     extname: '.html'
 }));
+
 app.set('view engine', '.html');
 
+app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
 // routing
 
 app.get('/', (req, res) => {
-    res.render('index', {title: `Home - ${domain}`});
+    res.render('index', {title: 'Home'});
 });
 
 app.get('/about', (req, res) => {
-    res.render('about', {title: `About - ${domain}`});
+    res.render('about', {title: 'About'});
 });
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
